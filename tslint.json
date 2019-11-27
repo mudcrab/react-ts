@@ -1,0 +1,21 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "interface-name": [true, "never-prefix"],
+        "member-access": [true, "no-public"],
+        "indent": [true, "spaces", 2],
+        "max-classes-per-file": [false, 1],
+        "arrow-parens": false,
+        "quotemark": [true, "single", "jsx-double"],
+		"no-shadowed-variable": false,
+		"no-use-before-declare": false,
+		"no-unused-variable": false,
+        "variable-name": false,
+        "trailing-comma": false
+    },
+    "rulesDirectory": []
+}
