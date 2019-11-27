@@ -49,5 +49,8 @@
     "typescript": "^3.7.2",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^4.2.2"
+  },
+  "resolutions": {
+    "**/**/set-value": "^2.0.1"
   }
 }
