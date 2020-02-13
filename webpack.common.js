@@ -9,7 +9,8 @@ module.exports = {
 
   output: {
     filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js'
+    chunkFilename: '[name].[chunkhash].js',
+    publicPath: '/'
   },
 
   resolve: {
@@ -20,6 +21,7 @@ module.exports = {
   plugins: [
     new CopyPlugin([{ from: 'assets', to: '' }]),
     new HtmlWebpackPlugin({
+      base: '/',
       template: './assets/index.html'
     }),
     new ManifestPlugin()

@@ -1,6 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const PORT = 3333;
+const PORT = process.env.PORT || 7021;
 const path = require('path');
 
 module.exports = merge(common, {
@@ -16,6 +16,10 @@ module.exports = merge(common, {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: PORT,
-    historyApiFallback: true
+    host: '0.0.0.0',
+    historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:7011'
+    }
   }
 });
