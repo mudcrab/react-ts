@@ -5,3 +5,4 @@ dist/
 .idea/
 src/_tailwind.scss
 *.log
+src/scss/_tailwind.scss
