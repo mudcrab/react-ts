@@ -13,15 +13,13 @@ export const Translate = (props: ComponentProps) => {
 
   useEffect(() => {
     if (!data.loading) {
-      setLangData(data.result);
+      setLangData(data.result as any);
     }
   });
 
   return data.loading ? (
-    <></>
+    <div>asd</div>
   ) : (
-    <TranslateContext.Provider value={{ lang, langData }}>
-      {props.children}
-    </TranslateContext.Provider>
+    <TranslateContext.Provider value={{ lang, langData }}>{props.children}</TranslateContext.Provider>
   );
 };
