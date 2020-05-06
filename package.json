@@ -5,14 +5,11 @@
   "license": "MIT",
   "author": "Jevgeni Sillar <jevgeni@pitfire.io>",
   "scripts": {
-    "dev": "yarn build:css:dev && webpack-dev-server --mode=development --hot --inline --config webpack.dev.js",
+    "dev": "webpack-dev-server --mode=development --hot --inline --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "build:css:dev": "postcss src/index.css -o src/scss/_tailwind.scss",
-    "build:css": "postcss src/index.css -o src/scss/_tailwind.scss --env production",
     "stats": "webpack --config webpack.prod.js --profile --json > dist/stats.json",
     "analyze": "webpack-bundle-analyzer dist/stats.json",
-    "lint": "tslint -c tslint.json 'src/**/*.ts*'",
-    "prebuild": "NODE_ENV=production yarn build:css"
+    "lint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.3.0",
@@ -24,10 +21,13 @@
     "@types/react-router-dom": "^5.1.3",
     "autoprefixer": "^9.7.2",
     "awesome-typescript-loader": "^5.2.1",
+    "glob": "^7.1.6",
     "ky": "^0.16.1",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.10.0",
     "postcss-cli": "^6.1.3",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
+    "purgecss-webpack-plugin": "^2.2.0",
     "react": "^16.12.0",
     "react-async-hook": "^3.6.1",
     "react-dom": "npm:@hot-loader/react-dom",
@@ -46,6 +46,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "bootstrap-scss": "^4.4.1",
     "class-validator": "^0.9.1",
     "classnames": "^2.2.6",
     "copy-webpack-plugin": "^5.0.3",
@@ -58,6 +59,7 @@
     "mdi-react": "^6.5.0",
     "preact": "^10.0.5",
     "react-hot-loader": "^4.12.18",
+    "react-icons": "^3.10.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "rxjs": "^6.5.4",
@@ -70,5 +72,11 @@
   },
   "resolutions": {
     "**/**/set-value": "^2.0.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "trailingComma": "none",
+    "semi": true
   }
 }

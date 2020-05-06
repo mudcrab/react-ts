@@ -1,9 +1,5 @@
-interface Payload<T> {
-  status: boolean;
-  payload: T;
-}
-
 import ky from 'ky';
+import { Payload } from '../props';
 
 export const get = <T>(uri: string) =>
   ky
@@ -13,7 +9,7 @@ export const get = <T>(uri: string) =>
       }
     })
     .json<Payload<T>>()
-    .then(data => data.payload);
+    .then((data) => data.payload);
 
 export const put = <T>(uri: string, json: T) =>
   ky
@@ -24,7 +20,7 @@ export const put = <T>(uri: string, json: T) =>
       }
     })
     .json<Payload<T>>()
-    .then(d => d.payload);
+    .then((d) => d.payload);
 
 export const post = <T>(uri: string, json: T) =>
   ky
@@ -35,7 +31,7 @@ export const post = <T>(uri: string, json: T) =>
       }
     })
     .json<Payload<T>>()
-    .then(d => d.payload);
+    .then((d) => d.payload);
 
 export const del = <T>(uri: string) =>
   ky
@@ -45,4 +41,4 @@ export const del = <T>(uri: string) =>
       }
     })
     .json<Payload<T>>()
-    .then(d => d.payload);
+    .then((d) => d.payload);

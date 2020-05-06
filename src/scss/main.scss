@@ -1,1 +1,26 @@
-@import 'tailwind';
+$pln-black: #252323;
+$pln-light-black: #3d3b3b;
+$pln-darker-gray: #b5b5b5;
+$pln-brand-green: #2bc59f;
+$pln-red: #ea4343;
+
+$theme-colors: (
+        "primary": $pln-brand-green,
+  //	"secondary": $grey-color,
+  //	"success": $uxp-success-icon,
+  //	"info": $uxp-info-icon,
+  //	"warning": darken($uxp-warn-border, 30%),
+  //	"danger": $uxp-warn-icon
+);
+
+//$font-family-sans-serif: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$enable-rounded: false;
+$grid-columns: 12;
+
+@import "~bootstrap-scss";
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+}
